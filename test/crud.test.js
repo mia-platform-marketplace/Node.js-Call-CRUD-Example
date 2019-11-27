@@ -65,7 +65,7 @@ tap.test('Testing CRUD', async test => {
       .reply(200, riders)
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders',
+      url: '/riders/',
     })
     const expectedResponse = {
       statusCode: 200,
@@ -79,12 +79,12 @@ tap.test('Testing CRUD', async test => {
     assert.plan(3)
 
     const scope = nock('https://crud-service')
-      .get('/v2/riders/rider1')
+      .get('/v2/riders/rider1/')
       .reply(200, rider)
 
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders/rider1',
+      url: '/riders/rider1/',
     })
 
     const expectedResponse = {
@@ -102,49 +102,7 @@ tap.test('Testing CRUD', async test => {
 
     const scope = nock('https://crud-service')
       .get('/v2/riders/')
-      .reply(400, 'Bad request')
-
-    const response = await fastify.inject({
-      method: 'GET',
-      url: '/riders',
-    })
-
-    const expectedResponse = {
-      statusCode: 400,
-      error: 'Bad Request',
-      message: 'Response code 400 (Bad Request)',
-    }
-
-    assert.strictSame(response.statusCode, 400)
-    assert.strictSame(JSON.parse(response.payload), expectedResponse)
-    assert.ok(scope.isDone())
-  })
-
-  test.test('GET /riders/:id route BAD REQUEST', async assert => {
-    assert.plan(3)
-
-    const scope = nock('https://crud-service')
-      .get('/v2/riders/rider1')
-      .reply(400, 'Bad request')
-
-    const response = await fastify.inject({
-      method: 'GET',
-      url: '/riders/rider1',
-    })
-
-    const expectedResponse = {
-      statusCode: 400,
-      error: 'Bad Request',
-      message: 'Response code 400 (Bad Request)',
-    }
-
-    assert.strictSame(response.statusCode, 400)
-    assert.strictSame(JSON.parse(response.payload), expectedResponse)
-    assert.ok(scope.isDone())
-  })
-
-  test.test('GET /riders/:id route MISSING ID', async assert => {
-    assert.plan(2)
+      .reply(500, 'Bad request')
 
     const response = await fastify.inject({
       method: 'GET',
@@ -152,32 +110,58 @@ tap.test('Testing CRUD', async test => {
     })
 
     const expectedResponse = {
-      statusCode: 400,
-      error: 'Missing ID',
+      statusCode: 500,
+      error: 'Internal Server Error',
+      message: 'Something went wrong',
     }
 
-    assert.strictSame(response.statusCode, 400)
+    assert.strictSame(response.statusCode, 500)
     assert.strictSame(JSON.parse(response.payload), expectedResponse)
+    assert.ok(scope.isDone())
+  })
+
+  test.test('GET /riders/:id route SERVER ERROR', async assert => {
+    assert.plan(3)
+
+    const scope = nock('https://crud-service')
+      .get('/v2/riders/rider1/')
+      .reply(500, 'Bad request')
+
+    const response = await fastify.inject({
+      method: 'GET',
+      url: '/riders/rider1/',
+    })
+
+    const expectedResponse = {
+      statusCode: 500,
+      error: 'Internal Server Error',
+      message: 'Something went wrong',
+    }
+
+    assert.strictSame(response.statusCode, 500)
+    assert.strictSame(JSON.parse(response.payload), expectedResponse)
+    assert.ok(scope.isDone())
   })
 
   test.test('GET /riders/:id route WRONG ID', async assert => {
     assert.plan(3)
 
     const scope = nock('https://crud-service')
-      .get('/v2/riders/fake_rider')
-      .reply(404, 'Not found')
+      .get('/v2/riders/fake_rider/')
+      .reply(404, { error: 'Not Found', message: 'Response code 404 (Not Found)' })
 
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders/fake_rider',
+      url: '/riders/fake_rider/',
     })
 
     const expectedResponse = {
       statusCode: 404,
-      error: 'Not Found',
-      message: 'Response code 404 (Not Found)',
+      result: {
+        error: 'Not Found',
+        message: 'Response code 404 (Not Found)',
+      },
     }
-
     assert.strictSame(response.statusCode, 404)
     assert.strictSame(JSON.parse(response.payload), expectedResponse)
     assert.ok(scope.isDone())

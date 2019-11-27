@@ -1,5 +1,5 @@
 {
-  "name": "%CUSTOM_PLUGIN_SERVICE_NAME%",
+  "name": "Node.js-call-CRUD",
   "version": "0.1.0",
   "description": "%CUSTOM_PLUGIN_SERVICE_DESCRIPTION%",
   "license": "SEE LICENSE IN LICENSE",
@@ -20,8 +20,7 @@
   },
   "dependencies": {
     "fastify": "^2.10.0",
-    "@mia-platform/custom-plugin-lib": "^1.0.5",
-    "got": "^9.6.0"
+    "@mia-platform/custom-plugin-lib": "^1.0.5"
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^2.0.1",

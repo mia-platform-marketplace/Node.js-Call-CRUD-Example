@@ -16,7 +16,6 @@
 
 'use strict'
 
-const got = require('got')
 const customService = require('@mia-platform/custom-plugin-lib')({
   type: 'object',
   required: ['CRUD_PATH'],
@@ -26,20 +25,15 @@ const customService = require('@mia-platform/custom-plugin-lib')({
 })
 
 module.exports = customService(async function index(service) {
-  service.addRawCustomPlugin('GET', '/', async(request, reply) => {
-    reply.send({ statusCode: 200, msg: 'Hello world!' })
+  service.addRawCustomPlugin('GET', '/riders/', async(request, reply) => {
+    const proxy = request.getDirectServiceProxy('crud-service', { protocol: 'https' })
+    const riders = await proxy.get('/v2/riders/')
+    reply.send({ statusCode: 200, result: riders.payload })
   })
-  service.addRawCustomPlugin('GET', '/riders', async(request, reply) => {
-    const response = await got(`${service.config.CRUD_PATH}/v2/riders/`, { json: true })
-    reply.send({ statusCode: 200, result: response.body })
-  })
-  service.addRawCustomPlugin('GET', '/riders/:id', async(request, reply) => {
+  service.addRawCustomPlugin('GET', '/riders/:id/', async(request, reply) => {
     const { id } = request.params
-    if (id === '') {
-      reply.status(400).send({ statusCode: 400, error: 'Missing ID' })
-      return
-    }
-    const response = await got(`${service.config.CRUD_PATH}/v2/riders/${id}`, { json: true })
-    reply.send({ statusCode: 200, result: response.body })
+    const proxy = request.getDirectServiceProxy('crud-service', { protocol: 'https' })
+    const { statusCode, payload } = await proxy.get(`/v2/riders/${id}/`)
+    reply.code(statusCode).send({ statusCode, result: payload })
   })
 })

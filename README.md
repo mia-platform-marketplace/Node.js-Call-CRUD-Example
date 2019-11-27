@@ -1,17 +1,30 @@
-# nodejs-custom-plugin
+# Node.js-call-CRUD
 [![pipeline status][pipeline]][git-link]
 [![coverage report][coverage]][git-link]
 
-## Summary
+## Getting Started
+
+### Summary
 %CUSTOM_PLUGIN_SERVICE_DESCRIPTION%
 
 This is an Example of a simple Node application calling the CRUD service.
-It shows how to access the riders collection using [got][got] for the requests.
+It shows how to access the riders collection using pur custom plugin for the requests.
 The CRUD path to access is taken from the env variable CRUD_PATH.
 
-## Local Development
+For using the example provided you can run:
+
+```shell
+npm run start:local
+```
+
+This command will launch the service on `localhost:3000` with the environment variables defined
+in this [file](./default.env).
+
+### Local Development
 To develop the service locally you need:
 - Node 10+
+- fastify 2.10.0+
+- @mia-platform/custom-plugin-lib 1.0.5+
 
 To setup node, please if possible try to use [nvm][nvm], so you can manage multiple
 versions easily. Once you have installed nvm, you can go inside the directory of the project and simply run
@@ -25,6 +38,7 @@ npm run coverage
 
 This two commands, will install the dependencies and run the tests with the coverage report that you can view as an HTML
 page in `coverage/lcov-report/index.html`.
+
 After running the coverage you can create your local copy of the default values for the `env` variables needed for
 launching the application.
 ```shell
@@ -42,7 +56,7 @@ npm start
 
 After that you will have the service exposed on your machine.
 
-## Contributing
+### Contributing
 To contribute to the project, please be mindful for this simple rules:
 1. Don’t commit directly on master
 2. Start your branches with `feature/` or `fix/` based on the content of the branch
@@ -50,10 +64,15 @@ To contribute to the project, please be mindful for this simple rules:
 4. Always commit in english
 5. Once you are happy with your branch, open a [Merge Request][merge-request]
 
+
+### Notes
+
+The first project build will fail because the `package-lock.json`
+file is missing.
+
 [pipeline]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/badges/master/pipeline.svg
 [coverage]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/badges/master/coverage.svg
 [git-link]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/commits/master
 
 [nvm]: https://github.com/creationix/nvm
 [merge-request]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/merge_requests
-[got]: https://github.com/sindresorhus/got
