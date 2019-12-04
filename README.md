@@ -1,4 +1,4 @@
-# Node.js-call-CRUD
+# Node.js service example with CRUD call
 [![pipeline status][pipeline]][git-link]
 [![coverage report][coverage]][git-link]
 
