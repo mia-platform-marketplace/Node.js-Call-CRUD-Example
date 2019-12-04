@@ -74,5 +74,5 @@ file is missing.
 [coverage]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/badges/master/coverage.svg
 [git-link]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/commits/master
 
-[nvm]: https://github.com/creationix/nvm
+[nvm]: https://github.com/nvm-sh/nvm
 [merge-request]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/merge_requests
