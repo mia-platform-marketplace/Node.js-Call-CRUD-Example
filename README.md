@@ -23,8 +23,6 @@ in this [file](./default.env).
 ### Local Development
 To develop the service locally you need:
 - Node 10+
-- fastify 2.10.0+
-- @mia-platform/custom-plugin-lib 1.0.5+
 
 To setup node, please if possible try to use [nvm][nvm], so you can manage multiple
 versions easily. Once you have installed nvm, you can go inside the directory of the project and simply run

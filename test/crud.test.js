@@ -54,18 +54,18 @@ tap.test('Testing CRUD', async test => {
     CLIENTTYPE_HEADER_KEY: 'clienttype',
     BACKOFFICE_HEADER_KEY: 'backoffice',
     MICROSERVICE_GATEWAY_SERVICE_NAME: 'microservice-gateway.example.org',
-    CRUD_PATH: 'https://crud-service',
+    CRUD_PATH: 'crud-service',
   })
   test.tearDown(() => fastify.close())
 
   test.test('GET /riders/ route CORRECTLY', async assert => {
     assert.plan(3)
     const scope = nock('https://crud-service')
-      .get('/v2/riders/')
+      .get('/v2/riders')
       .reply(200, riders)
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders/',
+      url: '/riders',
     })
     const expectedResponse = {
       statusCode: 200,
@@ -79,12 +79,12 @@ tap.test('Testing CRUD', async test => {
     assert.plan(3)
 
     const scope = nock('https://crud-service')
-      .get('/v2/riders/rider1/')
+      .get('/v2/riders/rider1')
       .reply(200, rider)
 
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders/rider1/',
+      url: '/riders/rider1',
     })
 
     const expectedResponse = {
@@ -101,12 +101,12 @@ tap.test('Testing CRUD', async test => {
     assert.plan(3)
 
     const scope = nock('https://crud-service')
-      .get('/v2/riders/')
+      .get('/v2/riders')
       .reply(500, 'Bad request')
 
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders/',
+      url: '/riders',
     })
 
     const expectedResponse = {
@@ -124,12 +124,12 @@ tap.test('Testing CRUD', async test => {
     assert.plan(3)
 
     const scope = nock('https://crud-service')
-      .get('/v2/riders/rider1/')
+      .get('/v2/riders/rider1')
       .reply(500, 'Bad request')
 
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders/rider1/',
+      url: '/riders/rider1',
     })
 
     const expectedResponse = {
@@ -147,12 +147,12 @@ tap.test('Testing CRUD', async test => {
     assert.plan(3)
 
     const scope = nock('https://crud-service')
-      .get('/v2/riders/fake_rider/')
+      .get('/v2/riders/fake_rider')
       .reply(404, { error: 'Not Found', message: 'Response code 404 (Not Found)' })
 
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders/fake_rider/',
+      url: '/riders/fake_rider',
     })
 
     const expectedResponse = {
