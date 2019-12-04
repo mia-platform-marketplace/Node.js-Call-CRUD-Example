@@ -102,7 +102,7 @@ tap.test('Testing CRUD', async test => {
 
     const scope = nock('https://crud-service')
       .get('/v2/riders')
-      .reply(500, 'Bad request')
+      .reply(500, 'Internal Server Error')
 
     const response = await fastify.inject({
       method: 'GET',
@@ -125,7 +125,7 @@ tap.test('Testing CRUD', async test => {
 
     const scope = nock('https://crud-service')
       .get('/v2/riders/rider1')
-      .reply(500, 'Bad request')
+      .reply(500, 'Internal Server Error')
 
     const response = await fastify.inject({
       method: 'GET',
