@@ -27,8 +27,8 @@ const customService = require('@mia-platform/custom-plugin-lib')({
 module.exports = customService(async function index(service) {
   service.addRawCustomPlugin('GET', '/riders', async(request, reply) => {
     const proxy = request.getDirectServiceProxy(service.config.CRUD_PATH, { protocol: 'https' })
-    const riders = await proxy.get('/v2/riders')
-    reply.send({ statusCode: 200, result: riders.payload })
+    const { statusCode, payload } = await proxy.get('/v2/riders')
+    reply.code(statusCode).send({ statusCode, result: payload })
   })
   service.addRawCustomPlugin('GET', '/riders/:id', async(request, reply) => {
     const { id } = request.params

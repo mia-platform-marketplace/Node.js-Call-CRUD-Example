@@ -102,17 +102,19 @@ tap.test('Testing CRUD', async test => {
 
     const scope = nock('https://crud-service')
       .get('/v2/riders')
-      .reply(500, 'Internal Server Error')
+      .reply(500, { statusCode: 500, error: 'Internal Server Error', message: 'Something went wrong' })
 
     const response = await fastify.inject({
       method: 'GET',
       url: '/riders',
     })
-
     const expectedResponse = {
       statusCode: 500,
-      error: 'Internal Server Error',
-      message: 'Something went wrong',
+      result: {
+        statusCode: 500,
+        error: 'Internal Server Error',
+        message: 'Something went wrong',
+      },
     }
 
     assert.strictSame(response.statusCode, 500)
@@ -125,7 +127,7 @@ tap.test('Testing CRUD', async test => {
 
     const scope = nock('https://crud-service')
       .get('/v2/riders/rider1')
-      .reply(500, 'Internal Server Error')
+      .reply(500, { statusCode: 500, error: 'Internal Server Error', message: 'Something went wrong' })
 
     const response = await fastify.inject({
       method: 'GET',
@@ -134,8 +136,11 @@ tap.test('Testing CRUD', async test => {
 
     const expectedResponse = {
       statusCode: 500,
-      error: 'Internal Server Error',
-      message: 'Something went wrong',
+      result: {
+        statusCode: 500,
+        error: 'Internal Server Error',
+        message: 'Something went wrong',
+      },
     }
 
     assert.strictSame(response.statusCode, 500)
@@ -148,7 +153,7 @@ tap.test('Testing CRUD', async test => {
 
     const scope = nock('https://crud-service')
       .get('/v2/riders/fake_rider')
-      .reply(404, { error: 'Not Found', message: 'Response code 404 (Not Found)' })
+      .reply(404, { statusCode: 404, error: 'Not Found', message: 'Response code 404 (Not Found)' })
 
     const response = await fastify.inject({
       method: 'GET',
@@ -158,6 +163,7 @@ tap.test('Testing CRUD', async test => {
     const expectedResponse = {
       statusCode: 404,
       result: {
+        statusCode: 404,
         error: 'Not Found',
         message: 'Response code 404 (Not Found)',
       },
