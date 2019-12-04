@@ -67,10 +67,7 @@ tap.test('Testing CRUD', async test => {
       method: 'GET',
       url: '/riders',
     })
-    const expectedResponse = {
-      statusCode: 200,
-      result: riders,
-    }
+    const expectedResponse = riders
     assert.strictSame(response.statusCode, 200)
     assert.strictSame(JSON.parse(response.body), expectedResponse)
     assert.ok(scope.isDone())
@@ -87,10 +84,7 @@ tap.test('Testing CRUD', async test => {
       url: '/riders/rider1',
     })
 
-    const expectedResponse = {
-      statusCode: 200,
-      result: rider,
-    }
+    const expectedResponse = rider
 
     assert.strictSame(response.statusCode, 200)
     assert.strictSame(JSON.parse(response.payload), expectedResponse)
@@ -110,11 +104,8 @@ tap.test('Testing CRUD', async test => {
     })
     const expectedResponse = {
       statusCode: 500,
-      result: {
-        statusCode: 500,
-        error: 'Internal Server Error',
-        message: 'Something went wrong',
-      },
+      error: 'Internal Server Error',
+      message: 'Something went wrong',
     }
 
     assert.strictSame(response.statusCode, 500)
@@ -136,11 +127,8 @@ tap.test('Testing CRUD', async test => {
 
     const expectedResponse = {
       statusCode: 500,
-      result: {
-        statusCode: 500,
-        error: 'Internal Server Error',
-        message: 'Something went wrong',
-      },
+      error: 'Internal Server Error',
+      message: 'Something went wrong',
     }
 
     assert.strictSame(response.statusCode, 500)
@@ -162,11 +150,8 @@ tap.test('Testing CRUD', async test => {
 
     const expectedResponse = {
       statusCode: 404,
-      result: {
-        statusCode: 404,
-        error: 'Not Found',
-        message: 'Response code 404 (Not Found)',
-      },
+      error: 'Not Found',
+      message: 'Response code 404 (Not Found)',
     }
     assert.strictSame(response.statusCode, 404)
     assert.strictSame(JSON.parse(response.payload), expectedResponse)
