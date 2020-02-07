@@ -8,7 +8,7 @@
 %CUSTOM_PLUGIN_SERVICE_DESCRIPTION%
 
 This is an Example of a simple Node application calling the CRUD service.
-It shows how to access the riders collection using pur custom plugin for the requests.
+It shows how to access the riders collection using our custom plugin for the requests.
 The CRUD path to access is taken from the env variable CRUD_PATH.
 
 For using the example provided you can run:
