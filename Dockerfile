@@ -28,7 +28,7 @@ ENV LOG_LEVEL=info
 ENV SERVICE_PREFIX=/
 ENV HTTP_PORT=3000
 
-WORKDIR /usr/src/app
+WORKDIR /home/node/app
 
 COPY --from=build /build-dir ./
 
