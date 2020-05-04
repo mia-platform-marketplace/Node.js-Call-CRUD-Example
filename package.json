@@ -19,7 +19,7 @@
     "unit": "CRUD_PATH=${CRUD_PATH:-crud-service} tap -b test/*.test.js"
   },
   "dependencies": {
-    "fastify": "^2.10.0",
+    "fastify": "^2.14.0",
     "@mia-platform/custom-plugin-lib": "^1.0.5"
   },
   "devDependencies": {
