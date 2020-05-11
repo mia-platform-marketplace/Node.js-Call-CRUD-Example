@@ -54,6 +54,8 @@ npm start
 
 After that you will have the service exposed on your machine.
 
+NOTE: to actually use the service on your local machine you also have to launch an instance of MIA-Platform `microservice-gateway` and `crud-service`.
+
 ### Contributing
 To contribute to the project, please be mindful for this simple rules:
 1. Don’t commit directly on master
