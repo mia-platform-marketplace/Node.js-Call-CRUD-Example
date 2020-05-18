@@ -60,7 +60,7 @@ tap.test('Testing CRUD', async test => {
 
   test.test('GET /riders/ route CORRECTLY', async assert => {
     assert.plan(3)
-    const scope = nock('https://crud-service')
+    const scope = nock('http://crud-service')
       .get('/v2/riders/')
       .reply(200, riders)
     const response = await fastify.inject({
@@ -75,7 +75,7 @@ tap.test('Testing CRUD', async test => {
   test.test('GET /riders/:id route CORRECTLY', async assert => {
     assert.plan(3)
 
-    const scope = nock('https://crud-service')
+    const scope = nock('http://crud-service')
       .get('/v2/riders/rider1')
       .reply(200, rider)
 
@@ -94,7 +94,7 @@ tap.test('Testing CRUD', async test => {
   test.test('GET /riders/ route SERVER ERROR', async assert => {
     assert.plan(3)
 
-    const scope = nock('https://crud-service')
+    const scope = nock('http://crud-service')
       .get('/v2/riders/')
       .reply(500, { statusCode: 500, error: 'Internal Server Error', message: 'Something went wrong' })
 
@@ -116,7 +116,7 @@ tap.test('Testing CRUD', async test => {
   test.test('GET /riders/:id route SERVER ERROR', async assert => {
     assert.plan(3)
 
-    const scope = nock('https://crud-service')
+    const scope = nock('http://crud-service')
       .get('/v2/riders/rider1')
       .reply(500, { statusCode: 500, error: 'Internal Server Error', message: 'Something went wrong' })
 
@@ -139,7 +139,7 @@ tap.test('Testing CRUD', async test => {
   test.test('GET /riders/:id route WRONG ID', async assert => {
     assert.plan(3)
 
-    const scope = nock('https://crud-service')
+    const scope = nock('http://crud-service')
       .get('/v2/riders/fake_rider')
       .reply(404, { statusCode: 404, error: 'Not Found', message: 'Response code 404 (Not Found)' })
 
