@@ -61,11 +61,11 @@ tap.test('Testing CRUD', async test => {
   test.test('GET /riders/ route CORRECTLY', async assert => {
     assert.plan(3)
     const scope = nock('https://crud-service')
-      .get('/v2/riders')
+      .get('/v2/riders/')
       .reply(200, riders)
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders',
+      url: '/riders/',
     })
     const expectedResponse = riders
     assert.strictSame(response.statusCode, 200)
@@ -95,12 +95,12 @@ tap.test('Testing CRUD', async test => {
     assert.plan(3)
 
     const scope = nock('https://crud-service')
-      .get('/v2/riders')
+      .get('/v2/riders/')
       .reply(500, { statusCode: 500, error: 'Internal Server Error', message: 'Something went wrong' })
 
     const response = await fastify.inject({
       method: 'GET',
-      url: '/riders',
+      url: '/riders/',
     })
     const expectedResponse = {
       statusCode: 500,
