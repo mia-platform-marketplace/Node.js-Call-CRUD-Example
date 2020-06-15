@@ -6,7 +6,7 @@ This walkthrough will explain you how to correctly create a microservice to acce
 In order to do so, access to [Mia-Platform DevOps Console](https://console.cloud.mia-platform.eu/login), create a new project and go to the **Design** area. From the Design area of your project select "Microservices" on the menu on the left sidebar and then create a new microservice, you have now reached [Mia-Platform Marketplace](https://docs.mia-platform.eu/development_suite/api-console/api-design/marketplace/)!  
 In the marketplace you will see a set of Examples and Templates that can be used to set-up microservices with a predefined and tested function.
 
-For this walkthrough select the following template: **Node.js Call CRUD Example**.
+For this walkthrough select the following example: **Node.js Call CRUD Example**.
 Give to your microservice the following name: **crud-example**. Then, fill the other required fields and confirm that you want to create a microservice.  
 A more detailed description on how to create a Microservice can be found in [Microservice from template - Get started](https://docs.mia-platform.eu/development_suite/api-console/api-design/custom_microservice_get_started/#2-service-creation) section of Mia-Platform documentation.
 
@@ -26,10 +26,10 @@ Step 3 of [Microservice from template - Get started](https://docs.mia-platform.e
 The microservice that we have just created is able to connect to a CRUD of riders and to perform GET requests to obtain a list of riders or a single rider from its ID. The next step is to create this CRUD of riders so that our microservice can connect to it.  
 
 From the Design area of your project select "CRUD" on the menu on the left sidebar. Give your CRUD the following name: **riders_crud**. Then confirm that you want to create a CRUD.  
-Once you have created your CRUD of riders you can add some properties to it. In this walkthrough we add two simple properties to out CRUD: *name* and *surname*, both of type *String*.  
+Once you have created your CRUD of riders you can add some properties to it. In this walkthrough we add two simple properties to our CRUD: *name* and *surname*, both of type *String*.  
 A more deatiled description on how to create and add properties to a CRUD can be found in [CRUD](https://docs.mia-platform.eu/development_suite/api-console/api-design/crud_advanced/) section of Mia-Platform documentation.
 
-Now we need to expose your CRUD with an endpoint. In particular, our *crud_example* microservice is designed to contact a CRUD with the following endpoint path: */riders*. In a similar way to what we have done when creating an endpoint to our microservice, we have to select "Endpoints" from the menu on the left sidebar.  
+Now we need to expose this CRUD with an endpoint. In particular, our *crud-example* microservice is designed to contact a CRUD with the following endpoint path: */riders*. In a similar way to what we have done when creating an endpoint to our microservice, we have to select "Endpoints" from the menu on the left sidebar.  
 Give to your endpoint the following path: **/riders**. Then, specify that you want to connect your endpoint to a CRUD and, finally, select *ridersCRUD*.
 
 After having created an endpoint to your CRUD you should save the changes that you have done to your project in the DevOps console.  Remember to choose a meaningful title for your commit (e.g "example_call_crud_creation"). After some seconds you will be prompted with a popup message which confirms that you have successfully saved all your changes.  
