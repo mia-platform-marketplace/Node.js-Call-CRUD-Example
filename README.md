@@ -26,7 +26,7 @@ The microservice that you have just created is able to connect to a CRUD of ride
 
 From the Design area of your project select "CRUD" on the menu on the left sidebar. Give your CRUD the following name: **riders_crud**. Then confirm that you want to create a CRUD.  
 Once you have created your CRUD of riders you can add some properties to it. In this walkthrough you should add two simple properties to your CRUD: *name* and *surname*, both of type *String*.  
-A more deatiled description on how to create and add properties to a CRUD can be found in [CRUD](https://docs.mia-platform.eu/development_suite/api-console/api-design/crud_advanced/) section of Mia-Platform documentation.
+A more detailed description on how to create and add properties to a CRUD can be found in [CRUD](https://docs.mia-platform.eu/development_suite/api-console/api-design/crud_advanced/) section of Mia-Platform documentation.
 
 Now you need to expose this CRUD with an endpoint. In particular, your *crud-example* microservice is designed to contact a CRUD with the following endpoint path: */riders*. In a similar way to what you have done when creating an endpoint to your microservice, you have to select _Endpoints_ section again.  
 Give to your endpoint the following path: **/riders**. Then, specify that you want to connect your endpoint to a CRUD and, finally, select *riders_crud*.
