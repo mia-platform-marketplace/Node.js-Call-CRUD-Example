@@ -25,7 +25,7 @@ Step 3 of [Microservice from template - Get started](https://docs.mia-platform.e
 
 The microservice that we have just created is able to connect to a CRUD of riders and to perform GET requests to obtain a list of riders or a single rider from its ID. The next step is to create this CRUD of riders so that our microservice can connect to it.  
 
-From the Design area of your project select "CRUD" on the menu on the left sidebar. Give your CRUD the following name: **ridersCRUD**. Then confirm that you want to create a CRUD.  
+From the Design area of your project select "CRUD" on the menu on the left sidebar. Give your CRUD the following name: **riders_crud**. Then confirm that you want to create a CRUD.  
 Once you have created your CRUD of riders you can add some properties to it. In this walkthrough we add two simple properties to out CRUD: *name* and *surname*, both of type *String*.  
 A more deatiled description on how to create and add properties to a CRUD can be found in [CRUD](https://docs.mia-platform.eu/development_suite/api-console/api-design/crud_advanced/) section of Mia-Platform documentation.
 
