@@ -1,8 +1,4 @@
-
 # Node.js service example with CRUD call
-
-[![pipeline status][pipeline]][git-link]
-[![coverage report][coverage]][git-link]
 
 ## Getting Started
 
@@ -85,10 +81,6 @@ To contribute to the project, please be mindful for this simple rules:
 3. If possible, refer to the Jira issue id, inside the name of the branch, but not call it only `fix/BAAST3000`
 4. Always commit in english
 5. Once you are happy with your branch, open a [Merge Request][merge-request]
-
-[pipeline]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/badges/master/pipeline.svg
-[coverage]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/badges/master/coverage.svg
-[git-link]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/commits/master
 
 [nvm]: https://github.com/nvm-sh/nvm
 [merge-request]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/merge_requests

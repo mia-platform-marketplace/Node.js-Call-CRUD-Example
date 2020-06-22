@@ -1,6 +1,7 @@
 # Node.js Call-CRUD Example walkthrough
 
 [![Build Status][github-actions-svg]][github-actions]
+[![Coverage Status][coverall-svg]][coverall-io]
 
 This walkthrough will explain you how to correctly create a microservice to access to a CRUD of riders from the DevOps Console.
 
@@ -96,3 +97,5 @@ Congratulations! You have successfully learnt how to use our Node.js _Call CRUD_
 
 [github-actions]: https://github.com/mia-platform-marketplace/Node.js-Call-CRUD-Example/actions
 [github-actions-svg]: https://github.com/mia-platform-marketplace/Node.js-Call-CRUD-Example/workflows/Node.js%20CI/badge.svg
+[coverall-svg]: https://coveralls.io/repos/github/mia-platform-marketplace/Node.js-Call-CRUD-Example/badge.svg?branch=master
+[coverall-io]: https://coveralls.io/github/mia-platform-marketplace/Node.js-Call-CRUD-Example?branch=master
