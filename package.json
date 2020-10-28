@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "fastify": "^2.15.1",
-    "@mia-platform/custom-plugin-lib": "^2.1.0"
+    "@mia-platform/custom-plugin-lib": "^2.1.1"
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
