@@ -72,6 +72,50 @@ tap.test('Testing CRUD', async test => {
     assert.strictSame(JSON.parse(response.body), expectedResponse)
     assert.ok(scope.isDone())
   })
+
+  test.test('POST /riders/ route CORRECTLY', async assert => {
+    assert.plan(2)
+    const scope = nock('http://crud-service')
+      .post('/riders/')
+      .reply(200, [])
+
+    const response = await fastify.inject({
+      method: 'POST',
+      url: '/riders',
+      payload: {
+        name: 'Foo',
+        surname: 'Bar',
+        __STATE__: 'PUBLIC',
+      },
+    })
+    assert.strictSame(response.statusCode, 200)
+    assert.ok(scope.isDone())
+  })
+
+  test.test('POST /riders/ route SERVER ERROR', async assert => {
+    assert.plan(3)
+    const scope = nock('http://crud-service')
+      .post('/riders/')
+      .reply(500, { statusCode: 500, error: 'Internal Server Error', message: 'Something went wrong' })
+    const expectedResponse = {
+      statusCode: 500,
+      error: 'Internal Server Error',
+      message: 'Something went wrong',
+    }
+    const response = await fastify.inject({
+      method: 'POST',
+      url: '/riders',
+      payload: {
+        name: 'Foo',
+        surname: 'Bar',
+        __STATE__: 'PUBLIC',
+      },
+    })
+    assert.strictSame(response.statusCode, 500)
+    assert.strictSame(JSON.parse(response.payload), expectedResponse)
+    assert.ok(scope.isDone())
+  })
+
   test.test('GET /riders/:id route CORRECTLY', async assert => {
     assert.plan(3)
 
