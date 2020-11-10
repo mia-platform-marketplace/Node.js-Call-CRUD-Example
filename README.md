@@ -104,7 +104,7 @@ Since there are no riders in your CRUD, you received an empty list, but you can 
 
 ```shell
 curl --request POST \
-  --url <YOUR_PROJECT_HOST>/microservices-example/riders/ \
+  --url <YOUR_PROJECT_HOST>/microservices-endpoint-example/riders/ \
   --header 'accept: */*' \
   --header 'content-type: application/json' \
   --data '{"name":"Foo","surname":"Bar","__STATE__":"PUBLIC"}'

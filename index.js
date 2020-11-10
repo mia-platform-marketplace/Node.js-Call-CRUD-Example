@@ -34,7 +34,7 @@ module.exports = customService(async function index(service) {
   service.addRawCustomPlugin('POST', '/riders', async(request, reply) => {
     const { body } = request
     const proxy = request.getDirectServiceProxy(service.config.CRUD_PATH, { protocol: 'http' })
-    const { statusCode, payload } = await proxy.post('/riders/', { body, json: true })
+    const { statusCode, payload } = await proxy.post('/riders/', body)
     reply.code(statusCode).send(payload)
   })
 
