@@ -74,19 +74,23 @@ tap.test('Testing CRUD', async test => {
   })
 
   test.test('POST /riders/ route CORRECTLY', async assert => {
-    assert.plan(2)
+    assert.plan(3)
+    const payload = {
+      name: 'Foo',
+      surname: 'Bar',
+      __STATE__: 'PUBLIC',
+    }
     const scope = nock('http://crud-service')
-      .post('/riders/')
+      .post('/riders/', body => {
+        assert.strictSame(body, payload)
+        return true
+      })
       .reply(200, [])
 
     const response = await fastify.inject({
       method: 'POST',
       url: '/riders',
-      payload: {
-        name: 'Foo',
-        surname: 'Bar',
-        __STATE__: 'PUBLIC',
-      },
+      payload,
     })
     assert.strictSame(response.statusCode, 200)
     assert.ok(scope.isDone())
