@@ -91,7 +91,7 @@ In navigation menu click the documentation sub menu and choose the environment i
 Launch the following command on your terminal (remember to replace `<YOUR_PROJECT_HOST>` with the real host of your project)
 
 ```shell
-curl <YOUR_PROJECT_HOST>/microservices-example/riders
+curl <YOUR_PROJECT_HOST>/microservices-endpoint-example/riders
 ```
 
 You should see the following message:
