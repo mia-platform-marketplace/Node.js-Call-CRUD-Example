@@ -114,7 +114,7 @@ After launching this command you should see in your terminal the id (<YOUR_RIDER
 Launch again:
 
 ```shell
-curl <YOUR_PROJECT_HOST>/microservices-example/riders
+curl <YOUR_PROJECT_HOST>/microservices-endpoint-example/riders
 ```
 
 The message that you see should be something like this:
