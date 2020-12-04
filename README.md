@@ -13,10 +13,11 @@ Choose a project or create a new project and navigate to **Design** area.
 Select _CRUD_ on the menu on the left sidebar and now create a new one.
 Choose from [Mia-Platform Marketplace](https://docs.mia-platform.eu/development_suite/api-console/api-design/marketplace/) for this walkthrough the following example: **Node.js Call CRUD Example**.
 In the compilation form:
-- Choose **microservices-example** as name of this service 
-- In _Git repository owner_ use the recommended value
-- In _Git repository name_ use the name that you will use for your project
-- In _Docker Image Name_ use the recommended value contained in the select
+
+  - Choose **microservices-example** as name of this service 
+  - In _Git repository owner_ use the recommended value
+  - In _Git repository name_ use the name that you will use for your project
+  - In _Docker Image Name_ use the recommended value contained in the select
 
 then confirm that you want to create a microservice.
 After this you will be redirected to your new microservice detail page.
@@ -28,8 +29,9 @@ A more detailed description on how to create a Microservice can be found in [Mic
 This microservices example requires to set the value of an environment variable to work properly. 
 Go to *Environment variable configuration* section at the bottom of the page.
 Add a new field to the table. Inside the popup that will open compile the form with:
-- key: CRUD_PATH
-- value: {{YOUR CRUD SERVICE PATH}}
+
+  - key: CRUD_PATH
+  - value: {{YOUR CRUD SERVICE PATH}}
 
 More information on how to set an environment variable can be found in [Environment Variable Configuration](https://docs.mia-platform.eu/development_suite/api-console/api-design/services/#environment-variable-configuration) section of Mia-Platform documentation.
 
@@ -49,8 +51,10 @@ Inside of this service we have created some route: GET and POST for `/riders` an
 The next step is create this CRUD of riders so that your microservice can connect to it.  
 
 From the Design area of your project select "CRUD" on the menu on the left sidebar.
-- Create a new CRUD with the following name: **riders** then you will be redirected to your CRUD detail page. 
-- Add some properties to this crud in the *Fields* section.
+
+  - Create a new CRUD with the following name: **riders** then you will be redirected to your CRUD detail page. 
+  - Add some properties to this crud in the *Fields* section.
+
 In this walkthrough you should add two simple properties: *name* and *surname*, both of type *String*.
  
 A more detailed description on how to create and add properties to a CRUD can be found in [CRUD](https://docs.mia-platform.eu/development_suite/api-console/api-design/crud_advanced/) section of Mia-Platform documentation.
@@ -59,9 +63,10 @@ A more detailed description on how to create and add properties to a CRUD can be
 
 Now you need to expose this CRUD with an endpoint.
 In a similar way to what you have done when creating an endpoint to your microservice, you have to select _Endpoints_ section again.  
-- Create a new endpoint called **/riders**. 
-- Choose type crud 
-- Select the *riders* CRUD created in [Create a CRUD](#create-a-crud) and select it.
+
+  - Create a new endpoint called **/riders**. 
+  - Choose type crud 
+  - Select the *riders* CRUD created in [Create a CRUD](#create-a-crud) and select it.
 
 Now you should have two endpoints, one for our CRUD *riders* and one for our microservice *microservices-example*
 If these endpoints are missing we recommend that you review the steps explained above
