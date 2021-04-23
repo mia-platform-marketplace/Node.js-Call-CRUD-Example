@@ -22,7 +22,7 @@
     "@mia-platform/eslint-config-mia": "^3.0.0",
     "eslint": "^7.13.0",
     "nock": "^13.0.4",
-    "tap": "^14.10.8"
+    "tap": "^15.0.3"
   },
   "private": true,
   "eslintConfig": {
