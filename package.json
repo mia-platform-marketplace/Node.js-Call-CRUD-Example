@@ -16,16 +16,22 @@
   },
   "dependencies": {
     "fastify": "^2.15.1",
-    "@mia-platform/custom-plugin-lib": "^2.1.1"
+    "@mia-platform/custom-plugin-lib": "^5.0.0"
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
-    "eslint": "^7.13.0",
-    "nock": "^13.0.4",
-    "tap": "^14.10.8"
+    "eslint": "^8.17.0",
+    "nock": "^13.2.6",
+    "tap": "^16.2.0"
   },
   "private": true,
   "eslintConfig": {
     "extends": "@mia-platform/eslint-config-mia"
+  },
+  "tap": {
+    "statements": 80,
+    "branches": 100,
+    "functions": 70,
+    "lines": 80
   }
 }
