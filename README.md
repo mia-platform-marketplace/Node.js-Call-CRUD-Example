@@ -11,7 +11,7 @@ Choose a project or create a new project and navigate to **Design** area.
 ## Create a microservice
 
 Select _CRUD_ on the menu on the left sidebar and now create a new one.
-Choose from [Mia-Platform Marketplace](https://docs.mia-platform.eu/development_suite/api-console/api-design/marketplace/) for this walkthrough the following example: **Node.js Call CRUD Example**.
+Choose from [Mia-Platform Marketplace](https://docs.mia-platform.eu/docs/marketplace/overview_marketplace) for this walkthrough the following example: **Node.js Call CRUD Example**.
 In the compilation form:
 
   - Choose **microservices-example** as name of this service 
@@ -22,7 +22,7 @@ In the compilation form:
 then confirm that you want to create a microservice.
 After this you will be redirected to your new microservice detail page.
 
-A more detailed description on how to create a Microservice can be found in [Microservice from template - Get started](https://docs.mia-platform.eu/development_suite/api-console/api-design/custom_microservice_get_started/#2-service-creation) section of Mia-Platform documentation.
+A more detailed description on how to create a Microservice can be found in [Microservice from template - Get started](https://docs.mia-platform.eu/docs/development_suite/api-console/api-design/custom_microservice_get_started#1-microservice-creation) section of Mia-Platform documentation.
 
 ## Set an environment variable
 
@@ -33,7 +33,7 @@ Add a new field to the table. Inside the popup that will open compile the form w
   - key: CRUD_PATH
   - value: {{YOUR CRUD SERVICE PATH}}
 
-More information on how to set an environment variable can be found in [Environment Variable Configuration](https://docs.mia-platform.eu/development_suite/api-console/api-design/services/#environment-variable-configuration) section of Mia-Platform documentation.
+More information on how to set an environment variable can be found in [Environment Variable Configuration](https://docs.mia-platform.eu/docs/development_suite/api-console/api-design/services/#environment-variable-configuration) section of Mia-Platform documentation.
 
 ## Expose an endpoint to your microservice
 
@@ -42,7 +42,7 @@ To do so, from the Design area of your project select _Endpoints_ and then creat
 The type of this endpoint is *microservices*, 
 then select the microservice calls **microservices-example** just created in [Create a microservice](#create-a-microservice).
 
-See step 3 of [Microservice from template - Get started](https://docs.mia-platform.eu/development_suite/api-console/api-design/custom_microservice_get_started/#3-creating-the-endpoint) section of Mia-Platform documentation will explain in detail how to create an endpoint from the DevOps Console.
+See step 2 of [Microservice from template - Get started](https://docs.mia-platform.eu/docs/development_suite/api-console/api-design/custom_microservice_get_started#2-creating-the-endpoint) section of Mia-Platform documentation will explain in detail how to create an endpoint from the DevOps Console.
 
 ## Create a CRUD
 
@@ -57,7 +57,7 @@ From the Design area of your project select "CRUD" on the menu on the left sideb
 
 In this walkthrough you should add two simple properties: *name* and *surname*, both of type *String*.
  
-A more detailed description on how to create and add properties to a CRUD can be found in [CRUD](https://docs.mia-platform.eu/development_suite/api-console/api-design/crud_advanced/) section of Mia-Platform documentation.
+A more detailed description on how to create and add properties to a CRUD can be found in [CRUD](https://docs.mia-platform.eu/docs/development_suite/api-console/api-design/crud_advanced) section of Mia-Platform documentation.
 
 ## Expose an endpoint to your CRUD
 
@@ -80,7 +80,7 @@ Click it and commit the changes that you have done in your project.
 
 After some seconds you will be prompted with a popup message which confirms that you have successfully saved all your changes.
 
-See step 4 of [Microservice from template - Get started](https://docs.mia-platform.eu/development_suite/api-console/api-design/custom_microservice_get_started/#4-save-the-project) section of Mia-Platform documentation will explain how to correctly save the changes you have made on your project in the DevOps console.
+See step 3 of [Microservice from template - Get started](https://docs.mia-platform.eu/docs/development_suite/api-console/api-design/custom_microservice_get_started#3-save-the-project) section of Mia-Platform documentation will explain how to correctly save the changes you have made on your project in the DevOps console.
 
 ## Deploy
  
@@ -88,7 +88,7 @@ Go to the **Deploy** area of the DevOps Console.
 Here select environment and branch you have worked on and confirm your choices clicking on the *deploy* button. 
 When the deploy process is finished you will receive a pop-up message that will inform you have successfully deployed.  
 
-See step 5 of [Microservice from template - Get started](https://docs.mia-platform.eu/development_suite/api-console/api-design/custom_microservice_get_started/#5-deploy-the-project-through-the-api-console) section of Mia-Platform documentation will explain in detail how to correctly deploy your project.
+See step 4 of [Microservice from template - Get started](https://docs.mia-platform.eu/docs/development_suite/api-console/api-design/custom_microservice_get_started#4-deploy-the-project-through-the-api-console) section of Mia-Platform documentation will explain in detail how to correctly deploy your project.
 
 ## Try it
 
