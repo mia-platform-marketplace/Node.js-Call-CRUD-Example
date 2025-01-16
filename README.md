@@ -3,6 +3,8 @@
 [![Build Status][github-actions-svg]][github-actions]
 [![Coverage Status][coverall-svg]][coverall-io]
 
+> ⚠️ Warning: This repository is no longer maintained.
+
 This walkthrough will explain you how to correctly create a microservice to access to a CRUD of riders from the DevOps Console.
 
 In order to do so, access to [Mia-Platform DevOps Console](https://console.cloud.mia-platform.eu/login).
